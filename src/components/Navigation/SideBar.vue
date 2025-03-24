@@ -119,8 +119,7 @@ export default {
 .sidebar ul li {
   padding: 15px 10px;
   cursor: pointer;
-  border-radius: 4px;
-  margin: 1px 7px;
+  margin: 2px 2px;
   display: flex;
   align-items: center;
 }
@@ -131,7 +130,7 @@ export default {
 }
 
 .sidebar ul li:hover {
-  background-color: #60a3d9;
+  background-color: #055c9d;
 }
 
 .sidebar ul li.logout-item:hover i {
@@ -139,7 +138,7 @@ export default {
 }
 
 .sidebar ul li.active {
-  background: #60a3d9;
+  background: #055c9d;
   color: white;
 }
 
@@ -160,7 +159,7 @@ export default {
 
 .sidebar.collapsed ul li i {
   margin: 0;
-  padding: 12px;
+  padding: 5px;
   font-size: 18px;
 }
 
