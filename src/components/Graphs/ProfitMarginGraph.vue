@@ -1,7 +1,7 @@
 <template>
   <div class="chart-container">
     <div class="header">
-      <h4>Operating Expenses</h4>
+      <h4>Profit Margin</h4>
       <select v-model="selectedRange">
         <option value="7d">Last 7 Days</option>
         <option value="12m">Last 12 Months</option>
@@ -9,7 +9,7 @@
       </select>
     </div>
     <apexchart
-      type="bar"
+      type="line"
       height="300"
       :options="chartOptions"
       :series="series"
@@ -30,6 +30,7 @@ export default {
       dataSets: {
         "7d": {
           categories: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+          revenueData: [5100, 6200, 5500, 7400, 7200, 6700, 7550],
           expensesData: [3200, 3600, 3400, 4200, 4300, 4000, 4200],
         },
         "12m": {
@@ -47,13 +48,18 @@ export default {
             "Nov",
             "Dec",
           ],
+          revenueData: [
+            10000, 12500, 14500, 13500, 18500, 19800, 22500, 21500, 24000,
+            26500, 27500, 31000,
+          ],
           expensesData: [
             8100, 8800, 9200, 9600, 10100, 11300, 12200, 11800, 13000, 13500,
             14500, 15500,
           ],
         },
         "5y": {
-          categories: ["2021", "2022", "2023", "2024", "2025"],
+          categories: ["2019", "2020", "2021", "2022", "2023"],
+          revenueData: [48500, 59000, 72500, 82500, 95000],
           expensesData: [36000, 40500, 46000, 53000, 58500],
         },
       },
@@ -63,47 +69,42 @@ export default {
     chartOptions() {
       return {
         chart: {
-          id: "operating-expenses-bar-chart",
+          id: "profit-margin-line-chart",
           toolbar: { show: false },
           fontFamily: "Inter, sans-serif",
-          legend: {
-            show: true,
+          animations: {
+            enabled: true,
+            easing: "easeinout",
+            speed: 800,
           },
         },
         xaxis: {
           categories: this.dataSets[this.selectedRange].categories,
-          labels: {
-            style: {
-              colors: "rgba(47, 43, 61, 0.9)",
-            },
-          },
         },
         yaxis: {
           labels: {
-            style: {
-              colors: "rgba(47, 43, 61, 0.9)",
-            },
+            formatter: (value) => `${(value * 100).toFixed(2)}%`, // Format as percentage
           },
         },
-        colors: ["#FF5722"],
+
+        colors: ["#27AE60"], // Green color for profit margin line
         grid: {
           borderColor: "#e0e0e0",
           strokeDashArray: 0,
-          xaxis: {
-            lines: { show: true },
-          },
-          yaxis: {
-            lines: { show: true },
-          },
         },
       };
     },
     series() {
       const selectedData = this.dataSets[this.selectedRange];
+      // Calculate the profit margin data
+      const profitMarginData = selectedData.revenueData.map(
+        (revenue, index) =>
+          (revenue - selectedData.expensesData[index]) / revenue
+      );
       return [
         {
-          name: "Operating Expenses",
-          data: selectedData.expensesData,
+          name: "Profit Margin",
+          data: profitMarginData,
         },
       ];
     },

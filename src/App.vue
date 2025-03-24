@@ -29,6 +29,7 @@ import CardContainer from "./components/UI/CardContainer.vue";
 import RevenueExpensesGraph from "./components/Graphs/RevenueExpensesGraph.vue";
 import SalesBreakdownGraph from "./components/Graphs/SalesBreakdownGraph.vue";
 import OperatingExpensesGraph from "./components/Graphs/OperatingExpensesGraph.vue";
+import ProfitMarginGraph from "./components/Graphs/ProfitMarginGraph.vue";
 
 export default {
   name: "App",
@@ -40,6 +41,7 @@ export default {
     KPIContainer,
     TopCard,
     OperatingExpensesGraph,
+    ProfitMarginGraph,
   },
   data() {
     return {
@@ -100,10 +102,13 @@ export default {
           component: RevenueExpensesGraph,
         },
         {
-          component: SalesBreakdownGraph,
+          component: ProfitMarginGraph,
         },
         {
           component: OperatingExpensesGraph,
+        },
+        {
+          component: SalesBreakdownGraph,
         },
       ],
     };
@@ -150,7 +155,7 @@ h4 {
   color: #274472;
   padding: 2px;
   margin: 2px;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .kpis-container {
@@ -164,7 +169,7 @@ h4 {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 @media (max-width: 1000px) {
