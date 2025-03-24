@@ -16,7 +16,7 @@
       <div class="revenue-graph-container">
         <!-- REVENUE GRAPH INSIDE CARD -->
         <CardContainer>
-          <RevenueGraph />
+          <RevenueExpensesGraph />
         </CardContainer>
       </div>
     </div>
@@ -26,14 +26,14 @@
 <script>
 import SideBar from "./components/Navigation/SideBar.vue";
 import CardContainer from "./components/UI/CardContainer.vue";
-import RevenueGraph from "./components/Graphs/RevenueGraph.vue";
+import RevenueExpensesGraph from "./components/Graphs/RevenueExpensesGraph.vue";
 
 export default {
   name: "App",
   components: {
     SideBar,
     CardContainer,
-    RevenueGraph,
+    RevenueExpensesGraph,
   },
 };
 </script>
