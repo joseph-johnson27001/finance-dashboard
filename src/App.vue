@@ -145,7 +145,7 @@ body {
 .main {
   flex-grow: 1;
   background-color: #f8f7fa;
-  padding: 10px;
+  padding: 20px;
   height: 100%;
   width: 100%;
   overflow-y: scroll;
@@ -161,14 +161,14 @@ h4 {
 .kpis-container {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 10px;
+  gap: 20px;
   margin-bottom: 10px;
 }
 
 .charts-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
+  gap: 20px;
   margin-bottom: 20px;
 }
 
