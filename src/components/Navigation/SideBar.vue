@@ -71,7 +71,6 @@ export default {
   min-height: 100%;
   max-height: 100vh;
   padding-top: 20px;
-  position: relative;
   z-index: 10;
   font-size: 15px;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
@@ -161,12 +160,5 @@ export default {
   margin: 0;
   padding: 5px;
   font-size: 18px;
-}
-
-@media (max-width: 699px) {
-  .sidebar,
-  .sidebar.collapsed {
-    display: none;
-  }
 }
 </style>

@@ -13,10 +13,13 @@
         <CardContainer> </CardContainer>
         <CardContainer> </CardContainer>
       </div>
-      <div class="revenue-graph-container">
+      <div class="charts-container">
         <!-- REVENUE GRAPH INSIDE CARD -->
         <CardContainer>
           <RevenueExpensesGraph />
+        </CardContainer>
+        <CardContainer>
+          <SalesBreakdownGraph />
         </CardContainer>
       </div>
     </div>
@@ -27,6 +30,7 @@
 import SideBar from "./components/Navigation/SideBar.vue";
 import CardContainer from "./components/UI/CardContainer.vue";
 import RevenueExpensesGraph from "./components/Graphs/RevenueExpensesGraph.vue";
+import SalesBreakdownGraph from "./components/Graphs/SalesBreakdownGraph.vue";
 
 export default {
   name: "App",
@@ -34,6 +38,7 @@ export default {
     SideBar,
     CardContainer,
     RevenueExpensesGraph,
+    SalesBreakdownGraph,
   },
 };
 </script>
@@ -82,6 +87,13 @@ h4 {
 .kpis-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.charts-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 10px;
   margin-bottom: 10px;
 }
