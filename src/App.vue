@@ -3,15 +3,14 @@
     <SideBar />
     <div class="main">
       <div class="kpis-container">
-        <!-- KPIs will go here -->
-        <CardContainer> </CardContainer>
-        <CardContainer> </CardContainer>
-        <CardContainer> </CardContainer>
-        <CardContainer> </CardContainer>
-        <CardContainer> </CardContainer>
-        <CardContainer> </CardContainer>
-        <CardContainer> </CardContainer>
-        <CardContainer> </CardContainer>
+        <!-- Loop through KPIs -->
+        <KPIContainer
+          v-for="(kpi, index) in kpis"
+          :key="index"
+          :iconClass="kpi.iconClass"
+          :kpiName="kpi.name"
+          :value="kpi.value"
+        />
       </div>
       <div class="charts-container">
         <!-- REVENUE GRAPH INSIDE CARD -->
@@ -31,6 +30,7 @@ import SideBar from "./components/Navigation/SideBar.vue";
 import CardContainer from "./components/UI/CardContainer.vue";
 import RevenueExpensesGraph from "./components/Graphs/RevenueExpensesGraph.vue";
 import SalesBreakdownGraph from "./components/Graphs/SalesBreakdownGraph.vue";
+import KPIContainer from "./components/UI/KPIContainer.vue";
 
 export default {
   name: "App",
@@ -39,6 +39,63 @@ export default {
     CardContainer,
     RevenueExpensesGraph,
     SalesBreakdownGraph,
+    KPIContainer,
+  },
+  data() {
+    return {
+      kpis: [
+        {
+          iconClass: "fas fa-dollar-sign", // Icon for total revenue
+          name: "Total Revenue",
+          value: "$1,234,567",
+        },
+        {
+          iconClass: "fas fa-credit-card", // Icon for net profit
+          name: "Net Profit",
+          value: "$456,789",
+        },
+        {
+          iconClass: "fas fa-chart-line", // Icon for gross margin
+          name: "Gross Margin",
+          value: "25%",
+        },
+        {
+          iconClass: "fas fa-building", // Icon for operating expenses
+          name: "Operating Expenses",
+          value: "$123,456",
+        },
+        {
+          iconClass: "fas fa-money-bill-wave", // Icon for cash flow
+          name: "Cash Flow",
+          value: "$89,000",
+        },
+        {
+          iconClass: "fas fa-calendar-check", // Icon for accounts receivable
+          name: "Accounts Receivable",
+          value: "$150,000",
+        },
+        {
+          iconClass: "fas fa-calendar-times", // Icon for accounts payable
+          name: "Accounts Payable",
+          value: "$78,000",
+        },
+        {
+          iconClass: "fas fa-balance-scale", // Icon for current ratio
+          name: "Current Ratio",
+          value: "1.5",
+        },
+        {
+          iconClass: "fas fa-cogs", // Icon for EBITDA
+          name: "EBITDA",
+          value: "$345,678",
+        },
+        {
+          iconClass: "fas fa-hand-holding-usd", // Icon for debt to equity ratio
+          name: "Debt to Equity Ratio",
+          value: "1.2",
+        },
+      ],
+    };
   },
 };
 </script>
@@ -77,16 +134,9 @@ body {
   width: 100%;
 }
 
-h4 {
-  color: #274472;
-  padding: 2px;
-  margin: 2px;
-  font-weight: 500;
-}
-
 .kpis-container {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 10px;
   margin-bottom: 10px;
 }
