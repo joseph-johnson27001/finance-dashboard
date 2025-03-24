@@ -1,5 +1,6 @@
 <template>
-  <div>
+  <div class="chart-container">
+    <h4>Revenue</h4>
     <apexchart
       type="line"
       height="350"
@@ -23,6 +24,7 @@ export default {
         chart: {
           id: "revenue-line-chart",
           toolbar: { show: false },
+          fontFamily: "Inter, sans-serif",
         },
         xaxis: {
           categories: [
@@ -40,18 +42,29 @@ export default {
             "Dec",
           ],
         },
-
-        title: {
-          text: "Monthly Revenue",
-          align: "left",
-        },
-        colors: ["#3b82f6"],
+        colors: ["#ffad5f"],
         grid: {
           borderColor: "#e0e0e0",
-          strokeDashArray: 5,
+          strokeDashArray: 0,
+          xaxis: {
+            lines: { show: true },
+          },
+          yaxis: {
+            lines: { show: true },
+          },
         },
       },
       series: [
+        {
+          name: "Revenue",
+          data: [],
+        },
+      ],
+    };
+  },
+  mounted() {
+    setTimeout(() => {
+      this.series = [
         {
           name: "Revenue",
           data: [
@@ -59,8 +72,10 @@ export default {
             25000, 27000, 30000,
           ],
         },
-      ],
-    };
+      ];
+    }, 100);
   },
 };
 </script>
+
+<style scoped></style>

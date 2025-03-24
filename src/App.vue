@@ -50,9 +50,7 @@ body {
 ::-webkit-scrollbar {
   display: none;
 }
-</style>
 
-<style scoped>
 body {
   padding: 0;
   margin: 0;
@@ -72,6 +70,13 @@ body {
   padding: 10px;
   height: 100%;
   width: 100%;
+}
+
+h4 {
+  color: #274472;
+  padding: 2px;
+  margin: 2px;
+  font-weight: 500;
 }
 
 .kpis-container {
