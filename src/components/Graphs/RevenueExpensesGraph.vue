@@ -3,7 +3,7 @@
     <div class="header">
       <h4>Revenue / Expenses</h4>
       <!-- Dropdown for selecting time range -->
-      <select v-model="selectedRange" @change="updateChartData">
+      <select v-model="selectedRange">
         <option value="7d">Last 7 Days</option>
         <option value="12m">Last 12 Months</option>
         <option value="5y">Last 5 Years</option>
@@ -28,49 +28,6 @@ export default {
   data() {
     return {
       selectedRange: "12m",
-      chartOptions: {
-        chart: {
-          id: "revenue-expenses-line-chart",
-          toolbar: { show: false },
-          fontFamily: "Inter, sans-serif",
-        },
-        xaxis: {
-          categories: [],
-          labels: {
-            style: {
-              colors: "rgba(47, 43, 61, 0.9)",
-            },
-          },
-        },
-        yaxis: {
-          labels: {
-            style: {
-              colors: "rgba(47, 43, 61, 0.9)",
-            },
-          },
-        },
-        colors: ["#2980B9", "#FF5722"],
-        grid: {
-          borderColor: "#e0e0e0",
-          strokeDashArray: 0,
-          xaxis: {
-            lines: { show: true },
-          },
-          yaxis: {
-            lines: { show: true },
-          },
-        },
-      },
-      series: [
-        {
-          name: "Revenue",
-          data: [],
-        },
-        {
-          name: "Expenses",
-          data: [],
-        },
-      ],
       dataSets: {
         "7d": {
           categories: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
@@ -109,13 +66,59 @@ export default {
       },
     };
   },
-  mounted() {
-    this.updateChartData();
-  },
-  methods: {
-    updateChartData() {
+  computed: {
+    // Computed property to automatically update chart options
+    chartOptions() {
+      return {
+        chart: {
+          id: "revenue-expenses-line-chart",
+          toolbar: { show: false },
+          fontFamily: "Inter, sans-serif",
+          animations: {
+            enabled: true, // Enabling animation for the line chart
+            easing: "easeinout", // Easing function for smooth animation
+            speed: 800, // Speed of the animation
+            animateGradually: {
+              enabled: true,
+              delay: 150,
+            },
+            dynamicAnimation: {
+              enabled: true,
+              speed: 350,
+            },
+          },
+        },
+        xaxis: {
+          categories: this.dataSets[this.selectedRange].categories,
+          labels: {
+            style: {
+              colors: "rgba(47, 43, 61, 0.9)",
+            },
+          },
+        },
+        yaxis: {
+          labels: {
+            style: {
+              colors: "rgba(47, 43, 61, 0.9)",
+            },
+          },
+        },
+        colors: ["#2980B9", "#FF5722"], // Custom colors for the line chart
+        grid: {
+          borderColor: "#e0e0e0",
+          strokeDashArray: 0,
+          xaxis: {
+            lines: { show: true },
+          },
+          yaxis: {
+            lines: { show: true },
+          },
+        },
+      };
+    },
+    series() {
       const selectedData = this.dataSets[this.selectedRange];
-      this.series = [
+      return [
         {
           name: "Revenue",
           data: selectedData.revenueData,
@@ -125,7 +128,6 @@ export default {
           data: selectedData.expensesData,
         },
       ];
-      this.chartOptions.xaxis.categories = selectedData.categories;
     },
   },
 };
