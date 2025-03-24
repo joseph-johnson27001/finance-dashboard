@@ -2,6 +2,7 @@
   <div id="app">
     <SideBar />
     <div class="main">
+      <TopCard />
       <div class="kpis-container">
         <!-- Loop through KPIs -->
         <KPIContainer
@@ -27,10 +28,11 @@
 
 <script>
 import SideBar from "./components/Navigation/SideBar.vue";
+import TopCard from "./components/UI/TopCard.vue";
+import KPIContainer from "./components/UI/KPIContainer.vue";
 import CardContainer from "./components/UI/CardContainer.vue";
 import RevenueExpensesGraph from "./components/Graphs/RevenueExpensesGraph.vue";
 import SalesBreakdownGraph from "./components/Graphs/SalesBreakdownGraph.vue";
-import KPIContainer from "./components/UI/KPIContainer.vue";
 
 export default {
   name: "App",
@@ -40,6 +42,7 @@ export default {
     RevenueExpensesGraph,
     SalesBreakdownGraph,
     KPIContainer,
+    TopCard,
   },
   data() {
     return {
