@@ -180,4 +180,10 @@ h4 {
     grid-template-columns: 1fr;
   }
 }
+
+@media (max-width: 500px) {
+  .kpis-container {
+    grid-template-columns: 1fr;
+  }
+}
 </style>
