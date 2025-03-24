@@ -41,7 +41,20 @@ export default {
             "Nov",
             "Dec",
           ],
+          labels: {
+            style: {
+              colors: "rgba(47, 43, 61, 0.9)",
+            },
+          },
         },
+        yaxis: {
+          labels: {
+            style: {
+              colors: "rgba(47, 43, 61, 0.9)",
+            },
+          },
+        },
+
         colors: ["#ffad5f"],
         grid: {
           borderColor: "#e0e0e0",
