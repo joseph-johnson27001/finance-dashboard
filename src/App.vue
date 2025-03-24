@@ -4,7 +4,6 @@
     <div class="main">
       <TopCard />
       <div class="kpis-container">
-        <!-- Loop through KPIs -->
         <KPIContainer
           v-for="(kpi, index) in kpis"
           :key="index"
@@ -14,12 +13,8 @@
         />
       </div>
       <div class="charts-container">
-        <!-- REVENUE GRAPH INSIDE CARD -->
-        <CardContainer>
-          <RevenueExpensesGraph />
-        </CardContainer>
-        <CardContainer>
-          <SalesBreakdownGraph />
+        <CardContainer v-for="(chart, index) in charts" :key="index">
+          <component :is="chart.component" />
         </CardContainer>
       </div>
     </div>
@@ -48,54 +43,62 @@ export default {
     return {
       kpis: [
         {
-          iconClass: "fas fa-dollar-sign", // Icon for total revenue
+          iconClass: "fas fa-dollar-sign",
           name: "Total Revenue",
           value: "$1,234,567",
         },
         {
-          iconClass: "fas fa-credit-card", // Icon for net profit
+          iconClass: "fas fa-credit-card",
           name: "Net Profit",
           value: "$456,789",
         },
         {
-          iconClass: "fas fa-chart-line", // Icon for gross margin
+          iconClass: "fas fa-chart-line",
           name: "Gross Margin",
           value: "25%",
         },
         {
-          iconClass: "fas fa-building", // Icon for operating expenses
+          iconClass: "fas fa-building",
           name: "Operating Expenses",
           value: "$123,456",
         },
         {
-          iconClass: "fas fa-money-bill-wave", // Icon for cash flow
+          iconClass: "fas fa-money-bill-wave",
           name: "Cash Flow",
           value: "$89,000",
         },
         {
-          iconClass: "fas fa-calendar-check", // Icon for accounts receivable
+          iconClass: "fas fa-calendar-check",
           name: "Accounts Receivable",
           value: "$150,000",
         },
         {
-          iconClass: "fas fa-calendar-times", // Icon for accounts payable
+          iconClass: "fas fa-calendar-times",
           name: "Accounts Payable",
           value: "$78,000",
         },
         {
-          iconClass: "fas fa-balance-scale", // Icon for current ratio
+          iconClass: "fas fa-balance-scale",
           name: "Current Ratio",
           value: "1.5",
         },
         {
-          iconClass: "fas fa-cogs", // Icon for EBITDA
+          iconClass: "fas fa-cogs",
           name: "EBITDA",
           value: "$345,678",
         },
         {
-          iconClass: "fas fa-hand-holding-usd", // Icon for debt to equity ratio
+          iconClass: "fas fa-hand-holding-usd",
           name: "Debt to Equity Ratio",
           value: "1.2",
+        },
+      ],
+      charts: [
+        {
+          component: RevenueExpensesGraph,
+        },
+        {
+          component: SalesBreakdownGraph,
         },
       ],
     };
@@ -135,6 +138,14 @@ body {
   padding: 10px;
   height: 100%;
   width: 100%;
+  overflow-y: scroll;
+}
+
+h4 {
+  color: #274472;
+  padding: 2px;
+  margin: 2px;
+  font-weight: 500;
 }
 
 .kpis-container {
@@ -149,5 +160,14 @@ body {
   grid-template-columns: repeat(2, 1fr);
   gap: 10px;
   margin-bottom: 10px;
+}
+
+@media (max-width: 1000px) {
+  .kpis-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .charts-container {
+    grid-template-columns: 1fr;
+  }
 }
 </style>

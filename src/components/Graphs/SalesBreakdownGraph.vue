@@ -71,11 +71,4 @@ export default {
   justify-content: space-between;
   align-items: center;
 }
-
-h4 {
-  color: #274472;
-  padding: 2px;
-  margin: 2px;
-  font-weight: 500;
-}
 </style>
