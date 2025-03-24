@@ -20,6 +20,19 @@ export default {
 
 <style>
 body {
+  margin: 0px !important;
+  scrollbar-width: none;
+  font-family: "Inter", sans-serif;
+  overflow-y: hidden;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+</style>
+
+<style scoped>
+body {
   padding: 0;
   margin: 0;
 }
