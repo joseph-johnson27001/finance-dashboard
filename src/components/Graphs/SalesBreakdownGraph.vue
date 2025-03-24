@@ -43,17 +43,7 @@ export default {
           },
         ],
         legend: {
-          position: "right",
-          offsetY: 0,
-          labels: {
-            colors: "rgba(47, 43, 61, 0.9)",
-            formatter: function (val, opts) {
-              const percentage = opts.w.globals.series[opts.seriesIndex];
-              const total = opts.w.globals.seriesTotals[opts.seriesIndex];
-              const value = ((percentage / total) * 100).toFixed(1);
-              return `${val}: ${value}%`;
-            },
-          },
+          show: false,
         },
         dataLabels: {
           enabled: true,
@@ -71,15 +61,6 @@ export default {
       },
       series: [55, 25, 15, 5],
     };
-  },
-  methods: {
-    triggerResize() {
-      this.$nextTick(() => {
-        if (this.$refs.chart) {
-          this.$refs.chart.chart.resize();
-        }
-      });
-    },
   },
 };
 </script>
