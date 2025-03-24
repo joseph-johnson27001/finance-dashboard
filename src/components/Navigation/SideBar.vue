@@ -30,18 +30,18 @@ export default {
         {
           name: "transactions",
           label: "Transactions",
-          icon: "far fa-money-bill-alt",
+          icon: "fas fa-money-bill-alt",
         },
         { name: "accounts", label: "Accounts", icon: "far fa-credit-card" },
-        { name: "budgets", label: "Budgets", icon: "far fa-wallet" },
+        { name: "budgets", label: "Budgets", icon: "fa fa-calculator" },
         {
           name: "investments",
           label: "Investments",
           icon: "fas fa-chart-line",
         },
-        { name: "taxes", label: "Taxes", icon: "far fa-file-invoice-dollar" },
-        { name: "reports", label: "Reports", icon: "far fa-file-alt" },
-        { name: "settings", label: "Settings", icon: "far fa-cog" },
+        { name: "taxes", label: "Taxes", icon: "fas fa-money-check-alt" },
+        { name: "reports", label: "Reports", icon: "far fa-file" },
+        { name: "settings", label: "Settings", icon: "far fa-save" },
         { name: "logout", label: "Logout", icon: "fas fa-sign-out-alt" },
       ],
     };
@@ -105,7 +105,7 @@ export default {
 
 .sidebar-title i {
   cursor: pointer;
-  font-size: 22px;
+  font-size: 20px;
 }
 
 .sidebar ul {
@@ -117,13 +117,12 @@ export default {
 }
 
 .sidebar ul li {
-  padding: 12px 10px;
+  padding: 15px 10px;
   cursor: pointer;
   border-radius: 4px;
   margin: 1px 7px;
   display: flex;
   align-items: center;
-  transition: background-color 0.3s ease;
 }
 
 .sidebar ul li.logout-item {
@@ -132,7 +131,7 @@ export default {
 }
 
 .sidebar ul li:hover {
-  background-color: #5885af;
+  background-color: #60a3d9;
 }
 
 .sidebar ul li.logout-item:hover i {
@@ -140,7 +139,7 @@ export default {
 }
 
 .sidebar ul li.active {
-  background: #5885af;
+  background: #60a3d9;
   color: white;
 }
 
