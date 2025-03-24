@@ -28,6 +28,7 @@ import KPIContainer from "./components/UI/KPIContainer.vue";
 import CardContainer from "./components/UI/CardContainer.vue";
 import RevenueExpensesGraph from "./components/Graphs/RevenueExpensesGraph.vue";
 import SalesBreakdownGraph from "./components/Graphs/SalesBreakdownGraph.vue";
+import OperatingExpensesGraph from "./components/Graphs/OperatingExpensesGraph.vue";
 
 export default {
   name: "App",
@@ -38,6 +39,7 @@ export default {
     SalesBreakdownGraph,
     KPIContainer,
     TopCard,
+    OperatingExpensesGraph,
   },
   data() {
     return {
@@ -99,6 +101,9 @@ export default {
         },
         {
           component: SalesBreakdownGraph,
+        },
+        {
+          component: OperatingExpensesGraph,
         },
       ],
     };
