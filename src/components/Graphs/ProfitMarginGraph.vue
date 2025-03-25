@@ -72,6 +72,9 @@ export default {
           id: "profit-margin-line-chart",
           toolbar: { show: false },
           fontFamily: "Inter, sans-serif",
+          zoom: {
+            enabled: false,
+          },
           animations: {
             enabled: true,
             easing: "easeinout",
@@ -83,11 +86,11 @@ export default {
         },
         yaxis: {
           labels: {
-            formatter: (value) => `${(value * 100).toFixed(2)}%`, // Format as percentage
+            formatter: (value) => `${(value * 100).toFixed(2)}%`,
           },
         },
 
-        colors: ["#27AE60"], // Green color for profit margin line
+        colors: ["#27AE60"],
         grid: {
           borderColor: "#e0e0e0",
           strokeDashArray: 0,
@@ -111,11 +114,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-</style>

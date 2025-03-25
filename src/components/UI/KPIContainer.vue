@@ -42,6 +42,7 @@ export default {
 }
 
 .header {
+  font-family: "Roboto";
   display: flex;
   align-items: center;
   margin-bottom: 10px;
@@ -70,7 +71,7 @@ export default {
 }
 
 .value {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 400;
   color: #333;
 }

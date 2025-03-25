@@ -105,6 +105,9 @@ export default {
           id: "sales-bar-chart",
           toolbar: { show: false },
           fontFamily: "Inter, sans-serif",
+          zoom: {
+            enabled: false,
+          },
         },
         xaxis: {
           categories: this.dataSets[this.selectedTimePeriod].categories,
@@ -135,11 +138,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-</style>

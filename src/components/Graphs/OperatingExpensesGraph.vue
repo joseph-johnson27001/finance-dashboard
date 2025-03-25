@@ -65,6 +65,9 @@ export default {
         chart: {
           id: "operating-expenses-bar-chart",
           toolbar: { show: false },
+          zoom: {
+            enabled: false,
+          },
           fontFamily: "Inter, sans-serif",
           legend: {
             show: true,
@@ -110,11 +113,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-</style>

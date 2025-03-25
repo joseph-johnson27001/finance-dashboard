@@ -67,17 +67,19 @@ export default {
     };
   },
   computed: {
-    // Computed property to automatically update chart options
     chartOptions() {
       return {
         chart: {
           id: "revenue-expenses-line-chart",
           toolbar: { show: false },
+          zoom: {
+            enabled: false,
+          },
           fontFamily: "Inter, sans-serif",
           animations: {
-            enabled: true, // Enabling animation for the line chart
-            easing: "easeinout", // Easing function for smooth animation
-            speed: 800, // Speed of the animation
+            enabled: true,
+            easing: "easeinout",
+            speed: 400,
             animateGradually: {
               enabled: true,
               delay: 150,
@@ -103,7 +105,7 @@ export default {
             },
           },
         },
-        colors: ["#2980B9", "#FF5722"], // Custom colors for the line chart
+        colors: ["#2980B9", "#FF5722"],
         grid: {
           borderColor: "#e0e0e0",
           strokeDashArray: 0,
@@ -132,11 +134,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-</style>
