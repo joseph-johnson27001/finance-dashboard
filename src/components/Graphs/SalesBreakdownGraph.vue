@@ -1,7 +1,7 @@
 <template>
   <div class="chart-container">
     <div class="header">
-      <h4>Sales</h4>
+      <h4>Revenue Streams</h4>
       <select v-model="selectedTimePeriod">
         <option value="7d">7 Days</option>
         <option value="12m">12 Months</option>
