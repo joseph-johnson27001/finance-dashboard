@@ -75,6 +75,11 @@ export default {
           zoom: {
             enabled: false,
           },
+          events: {
+            mounted: (chart) => {
+              chart.windowResizeHandler();
+            },
+          },
           fontFamily: "Inter, sans-serif",
           animations: {
             enabled: true,

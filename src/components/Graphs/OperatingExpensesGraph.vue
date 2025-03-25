@@ -5,7 +5,7 @@
       <select v-model="selectedRange">
         <option value="7d">7 Days</option>
         <option value="12m">12 Months</option>
-        <option value="5y">5 Years</option>
+        <option value="5y">Last 5 Years</option>
       </select>
     </div>
     <apexchart
@@ -93,7 +93,7 @@ export default {
             },
           },
         },
-        colors: ["#FF5722"],
+        colors: ["#27AE60"],
         grid: {
           borderColor: "#e0e0e0",
           strokeDashArray: 0,

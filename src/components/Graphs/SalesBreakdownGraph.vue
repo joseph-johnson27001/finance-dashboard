@@ -43,7 +43,10 @@ export default {
               name: "Memberships",
               data: [400, 450, 600, 750, 900, 1050, 1200],
             },
-            { name: "Digital", data: [300, 350, 400, 450, 500, 600, 700] },
+            {
+              name: "Digital Sales",
+              data: [300, 350, 400, 450, 500, 600, 700],
+            },
           ],
         },
         "12m": {
@@ -84,7 +87,7 @@ export default {
               ],
             },
             {
-              name: "Digital",
+              name: "Digital Sales",
               data: [
                 2000, 2300, 2500, 2700, 2900, 3100, 3300, 3500, 3700, 3900,
                 4200, 4500,
@@ -101,7 +104,7 @@ export default {
             },
             { name: "Consulting", data: [22000, 25000, 28000, 32000, 36000] },
             { name: "Memberships", data: [14000, 16000, 18000, 20000, 22000] },
-            { name: "Digital", data: [9000, 10000, 11000, 12000, 14000] },
+            { name: "Digital Sales", data: [9000, 10000, 11000, 12000, 14000] },
           ],
         },
       },

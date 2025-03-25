@@ -90,7 +90,7 @@ export default {
           },
         },
 
-        colors: ["#27AE60"],
+        colors: ["#2980B9"],
         grid: {
           borderColor: "#e0e0e0",
           strokeDashArray: 0,
@@ -99,7 +99,6 @@ export default {
     },
     series() {
       const selectedData = this.dataSets[this.selectedRange];
-      // Calculate the profit margin data
       const profitMarginData = selectedData.revenueData.map(
         (revenue, index) =>
           (revenue - selectedData.expensesData[index]) / revenue
