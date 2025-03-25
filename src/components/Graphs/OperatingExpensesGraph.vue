@@ -93,7 +93,7 @@ export default {
             },
           },
         },
-        colors: ["#27AE60"],
+        colors: ["#2980B9"],
         grid: {
           borderColor: "#e0e0e0",
           strokeDashArray: 0,
