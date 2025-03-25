@@ -1,6 +1,6 @@
 <template>
   <div class="card">
-    <div class="header">
+    <div class="card-header">
       <div class="icon-container">
         <i :class="iconClass"></i>
       </div>
@@ -41,7 +41,7 @@ export default {
   justify-content: space-between;
 }
 
-.header {
+.card-header {
   font-family: "Roboto";
   display: flex;
   align-items: center;
@@ -71,8 +71,8 @@ export default {
 }
 
 .value {
-  font-size: 16px;
-  font-weight: 400;
-  color: #333;
+  font-size: 18px;
+  font-weight: 500;
+  color: #222;
 }
 </style>
