@@ -3,9 +3,9 @@
     <div class="header">
       <h4>Profit Margin</h4>
       <select v-model="selectedRange">
-        <option value="7d">Last 7 Days</option>
-        <option value="12m">Last 12 Months</option>
-        <option value="5y">Last 5 Years</option>
+        <option value="7d">7 Days</option>
+        <option value="12m">12 Months</option>
+        <option value="5y">5 Years</option>
       </select>
     </div>
     <apexchart
@@ -58,7 +58,7 @@ export default {
           ],
         },
         "5y": {
-          categories: ["2019", "2020", "2021", "2022", "2023"],
+          categories: ["2019", "2020", "2021", "2022", "2023", "2024", "2025"],
           revenueData: [48500, 59000, 72500, 82500, 95000],
           expensesData: [36000, 40500, 46000, 53000, 58500],
         },
@@ -78,7 +78,7 @@ export default {
           animations: {
             enabled: true,
             easing: "easeinout",
-            speed: 800,
+            speed: 400,
           },
         },
         xaxis: {

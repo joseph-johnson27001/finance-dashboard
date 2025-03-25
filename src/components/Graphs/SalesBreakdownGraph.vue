@@ -3,9 +3,9 @@
     <div class="header">
       <h4>Sales by Product</h4>
       <select v-model="selectedTimePeriod">
-        <option value="7d">Last 7 Days</option>
-        <option value="12m">Last 12 Months</option>
-        <option value="5y">Last 5 Years</option>
+        <option value="7d">7 Days</option>
+        <option value="12m">12 Months</option>
+        <option value="5y">5 Years</option>
       </select>
     </div>
     <apexchart
@@ -107,6 +107,11 @@ export default {
           fontFamily: "Inter, sans-serif",
           zoom: {
             enabled: false,
+          },
+          animations: {
+            enabled: true,
+            easing: "easeinout",
+            speed: 400,
           },
         },
         xaxis: {
