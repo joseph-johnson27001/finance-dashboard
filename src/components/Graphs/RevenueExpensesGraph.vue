@@ -139,13 +139,4 @@ export default {
   justify-content: space-between;
   align-items: center;
 }
-
-select {
-  font-family: "Inter" sans-serif;
-  outline: none;
-  padding: 10px 5px;
-  font-size: 14px;
-  border-radius: 5px;
-  border: 1px solid #ddd;
-}
 </style>

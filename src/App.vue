@@ -102,10 +102,10 @@ export default {
           component: RevenueExpensesGraph,
         },
         {
-          component: ProfitMarginGraph,
+          component: OperatingExpensesGraph,
         },
         {
-          component: OperatingExpensesGraph,
+          component: ProfitMarginGraph,
         },
         {
           component: SalesBreakdownGraph,
@@ -170,6 +170,15 @@ h4 {
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
   margin-bottom: 20px;
+}
+
+select {
+  font-family: "Assistant";
+  outline: none;
+  padding: 10px 5px;
+  font-size: 14px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
 }
 
 @media (max-width: 1000px) {
