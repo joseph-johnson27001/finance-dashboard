@@ -1,7 +1,7 @@
 <template>
   <div class="chart-container">
     <div class="header">
-      <h4>Sales by Product</h4>
+      <h4>Sales</h4>
       <select v-model="selectedTimePeriod">
         <option value="7d">7 Days</option>
         <option value="12m">12 Months</option>
@@ -32,12 +32,18 @@ export default {
           categories: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
           series: [
             {
-              name: "Product A",
+              name: "Subscriptions",
               data: [1000, 1200, 1500, 1800, 2000, 2200, 2500],
             },
-            { name: "Product B", data: [500, 600, 700, 800, 1000, 1200, 1500] },
-            { name: "Product C", data: [400, 450, 600, 750, 900, 1050, 1200] },
-            { name: "Product D", data: [300, 350, 400, 450, 500, 600, 700] },
+            {
+              name: "Consulting",
+              data: [500, 600, 700, 800, 1000, 1200, 1500],
+            },
+            {
+              name: "Memberships",
+              data: [400, 450, 600, 750, 900, 1050, 1200],
+            },
+            { name: "Digital", data: [300, 350, 400, 450, 500, 600, 700] },
           ],
         },
         "12m": {
@@ -57,28 +63,28 @@ export default {
           ],
           series: [
             {
-              name: "Product A",
+              name: "Subscriptions",
               data: [
                 8100, 8800, 9200, 9600, 10100, 11300, 12200, 11800, 13000,
                 13500, 14500, 15500,
               ],
             },
             {
-              name: "Product B",
+              name: "Consulting",
               data: [
                 4000, 4500, 5000, 5500, 6000, 6200, 7000, 7400, 7800, 8100,
                 8500, 8900,
               ],
             },
             {
-              name: "Product C",
+              name: "Memberships",
               data: [
                 3000, 3100, 3300, 3500, 3700, 3900, 4200, 4400, 4700, 5000,
                 5300, 5600,
               ],
             },
             {
-              name: "Product D",
+              name: "Digital",
               data: [
                 2000, 2300, 2500, 2700, 2900, 3100, 3300, 3500, 3700, 3900,
                 4200, 4500,
@@ -89,10 +95,13 @@ export default {
         "5y": {
           categories: ["2021", "2022", "2023", "2024", "2025"],
           series: [
-            { name: "Product A", data: [36000, 40500, 46000, 53000, 58500] },
-            { name: "Product B", data: [22000, 25000, 28000, 32000, 36000] },
-            { name: "Product C", data: [14000, 16000, 18000, 20000, 22000] },
-            { name: "Product D", data: [9000, 10000, 11000, 12000, 14000] },
+            {
+              name: "Subscriptions",
+              data: [36000, 40500, 46000, 53000, 58500],
+            },
+            { name: "Consulting", data: [22000, 25000, 28000, 32000, 36000] },
+            { name: "Memberships", data: [14000, 16000, 18000, 20000, 22000] },
+            { name: "Digital", data: [9000, 10000, 11000, 12000, 14000] },
           ],
         },
       },
