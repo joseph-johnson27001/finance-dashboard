@@ -78,6 +78,17 @@ export default {
             show: true,
           },
         },
+        plotOptions: {
+          bar: {
+            horizontal: false,
+            columnWidth: "80%",
+            borderRadius: 5,
+            borderRadiusApplication: "end",
+            dataLabels: {
+              position: "top",
+            },
+          },
+        },
         xaxis: {
           categories: this.dataSets[this.selectedRange].categories,
           labels: {
@@ -93,7 +104,12 @@ export default {
             },
           },
         },
-        colors: ["#2980B9"],
+        colors: ["#4196d8"],
+        stroke: {
+          show: true,
+          width: 2,
+          colors: ["#1F6396"],
+        },
         grid: {
           borderColor: "#e0e0e0",
           strokeDashArray: 0,
