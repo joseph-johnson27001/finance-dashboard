@@ -89,6 +89,9 @@ export default {
             },
           },
         },
+        dataLabels: {
+          enabled: false,
+        },
         xaxis: {
           categories: this.dataSets[this.selectedRange].categories,
           labels: {
