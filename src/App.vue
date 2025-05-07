@@ -18,6 +18,7 @@
         </CardContainer>
       </div>
     </div>
+    <DashboardButton />
   </div>
 </template>
 
@@ -30,6 +31,7 @@ import RevenueExpensesGraph from "./components/Graphs/RevenueExpensesGraph.vue";
 import SalesBreakdownGraph from "./components/Graphs/SalesBreakdownGraph.vue";
 import OperatingExpensesGraph from "./components/Graphs/OperatingExpensesGraph.vue";
 import ProfitMarginGraph from "./components/Graphs/ProfitMarginGraph.vue";
+import DashboardButton from "./components/UI/DashboardButton.vue";
 
 export default {
   name: "App",
@@ -42,6 +44,7 @@ export default {
     TopCard,
     OperatingExpensesGraph,
     ProfitMarginGraph,
+    DashboardButton,
   },
   data() {
     return {
